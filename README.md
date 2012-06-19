@@ -1,4 +1,4 @@
 emacs
 =====
 
-emacs for alpha
+emacs configration of alpha
