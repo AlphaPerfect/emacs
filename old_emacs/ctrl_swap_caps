@@ -1,0 +1,3 @@
+# copy the line below to ~/.alpha_conf
+# insert ". ~/.alpha_conf in ~/.bashrc
+setxkbmap -option ctrl:swapcaps

@@ -1,0 +1,50 @@
+;; .emacs
+;;
+;;some elisp file follow
+(add-to-list 'load-path "D:\\tools\\Editor\\emacs\\config\\elisp\\emacs\\emcex")
+;; Load .emacs
+(load-file "D:\\tools\\Editor\\emacs\\config\\elisp\\emacs\\emacs_public")
+
+;;add the cscope-install-directory to the load-path
+;(load-file "D:\\tools\\Editor\\emacs\\config\\elisp\\emacs\\cscope\\cscope-15.7-win\\xscope.el")
+(add-to-list 'load-path "D:\\tools\\Editor\\emacs\\config\\elisp\\emacs\\cscope\\cscope-15.7-win")
+(require 'xcscope)
+
+;;Muse load-path
+(add-to-list 'load-path "D:\\tools\\Editor\\emacs\\config\\elisp\\emacs\\muse-latest")
+(require 'muse-color)  
+(require 'muse-mode)
+(require 'muse-html)
+(require 'muse-latex)
+(require 'muse-texinfo)
+(require 'muse-wiki)
+(require 'muse-docbook)
+
+;;set the chinese environment
+(set-language-environment 'Chinese-GBK)
+(prefer-coding-system 'utf-8)
+
+;;set default font added by mlf reference g9's blog 
+;;Options --> Set Default Font
+;;M-x:describe-font
+;;copy the font name in herr to set windows default-font
+(set-default-font "-outline-bitstream vera sans mono-normal-r-normal-normal-12-90-96-96-c-*-fontset-auto1")
+
+;;maximized emacs at startup only on windows os
+(defun emacs-maximize ()
+  "Maximize emacs window in windows os"
+  (interactive)
+  (w32-send-sys-command 61488))        ; WM_SYSCOMMAND #xf030 maximize
+(defun emacs-minimize ()
+  "Minimize emacs window in windows os"
+  (interactive)
+  (w32-send-sys-command #xf020))    ; #xf020 minimize
+(defun emacs-normal ()
+  "Normal emacs window in windows os"
+  (interactive)
+  (w32-send-sys-command #xf120))    ; #xf120 normalimize
+
+(emacs-maximize)
+
+;; common lisp compiler
+(setq inferior-lisp-program "d:\PortableApp\emacs\Steel Bank Common Lisp\1.0.37\sbcl.exe") ; your Lisp system compiler

@@ -1,0 +1,14 @@
+!
+! Swap Caps_Lock and Control_L
+! usage: cp xmodmap ~/.xmodmap
+! insert online below into /etc/rc.local 
+! xmodmap ~/.xmodmap 2>/dev/null
+
+! not use insert into ~/.xinitrc: xmodmap ~/.xmodmap
+
+remove Lock = Caps_Lock
+remove Control = Control_L
+keysym Control_L = Caps_Lock
+keysym Caps_Lock = Control_L
+add Lock = Caps_Lock
+add Control = Control_L

@@ -1,0 +1,25 @@
+* Install on windows
+** install mozilla-build
+   1. if you don't have the mozilla build then need to download 
+      the mozilla build latest version
+   2. modify the start-msvc10.dat add the content below
+      rem start /d "%USERPROFILE%" ""
+      set HOME=d:\work\
+      cd %HOME%
+   3. copy the emacs_config_mozilla_build to ~/.emacs
+   4. create the file named .vimrc and add line below to mute beep
+      set vb t_vb=
+
+** checkout the elisp project from google code
+   1. cd ~/
+   2. svn checkout https://elisp.googlecode.com/svn/trunk/ elisp
+   
+** install the font
+   cd elisp/bitstream_vera_sans_mono
+   install the font by double clicked
+
+** runemacs
+   run start-msvc10.dat
+   runemacs
+
+
