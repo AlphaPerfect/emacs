@@ -1,4 +1,4 @@
 emacs
 =====
 
-emacs configration of alpha
+emacs configration  and lisp study for alpha
