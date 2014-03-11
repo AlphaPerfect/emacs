@@ -87,3 +87,5 @@
      (setq unread-command-events (list last-input-event)))
 
 (define-key global-map (kbd "C-x j") 'wy-go-to-char)
+
+(add-hook 'write-file-hooks 'delete-trailing-whitespace)
