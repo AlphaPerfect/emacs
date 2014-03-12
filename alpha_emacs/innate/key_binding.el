@@ -8,7 +8,7 @@
 
 ; buffer move
 (global-set-key (kbd "M-P") 'previous-buffer)
-(global-set-key (kbd "M-N") 'previous-buffer)
+(global-set-key (kbd "M-N") 'next-buffer)
 
 ; key binding for rename buffer
 (global-set-key (kbd "C-x M-s") 'rename-buffer)
