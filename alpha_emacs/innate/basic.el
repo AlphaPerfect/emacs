@@ -1,4 +1,4 @@
-;; ido package: lets you interactively do things with buffers and files. 
+;; ido package: lets you interactively do things with buffers and files.
 ; http://emacswiki.org/emacs/InteractivelyDoThings
 (require 'ido)
 (ido-mode t)
@@ -9,7 +9,7 @@
 ;; uncomment this line to disable loading of "default.el" at startup
 (setq inhibit-default-init t)
 
-;;no startup message added 
+;;no startup message added
 (setq inhibit-startup-message t)
 
 ;; turn off the menu-bar
@@ -28,14 +28,14 @@
 (display-time)
 ;;use the 24hour format
 (setq display-time-24hr-format t)
-;; display time and date 
+;; display time and date
 (setq display-time-day-and-date t)
 
-;;display column-number 
+;;display column-number
 (setq column-number-mode t)
 
 ;(setq line-number-mode t)
-;;(require 'linum)            
+;;(require 'linum)
 ;;(global-linum-mode t)
 
 ;;set major mode to text-mode
@@ -55,14 +55,14 @@
 ;;set display the name of buffer by mlf
 (setq frame-title-format "emacs@%b")
 
-; auto backup files setting 
-(setq backup-by-copying t 
+; auto backup files setting
+(setq backup-by-copying t
       backup-directory-alist
-      '(("." . "~/.emacs_saves")) 
-      delete-old-versions t 
-      kept-new-versions 6 
-      kept-old-versions 2 
-      version-control t) 
+      '(("." . "~/.emacs_saves"))
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)
 
 
 ;;matching paren function added by mlf
@@ -88,4 +88,12 @@
 
 (define-key global-map (kbd "C-x j") 'wy-go-to-char)
 
+;; add the hook to delete the trailing whitespace when save file
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
+
+;; define the function to refresh the file from disk
+(defun refresh-file ()
+  (interactive)
+  (revert-buffer t (not (buffer-modified-p)) t))
+
+(global-set-key [(f5)] 'refresh-file)
