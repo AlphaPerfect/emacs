@@ -18,6 +18,8 @@
 (require 'go-mode)
 (require 'go-mode-load)
 
+;; php mode
+(require 'php-mode)
 ; shell directory
 ;(add-to-list 'load-path "shell")
 ;(if (file-exists-p "~/work/ggcode/elisp/alpha_emacs/extensions/shell/shell_conf.el")
