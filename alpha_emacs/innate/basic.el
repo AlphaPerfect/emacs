@@ -1,3 +1,6 @@
+;; replace the less for PAGER by cat
+(setenv "PAGER" "/bin/cat")
+
 ;; ido package: lets you interactively do things with buffers and files.
 ; http://emacswiki.org/emacs/InteractivelyDoThings
 (require 'ido)
