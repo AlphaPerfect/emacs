@@ -1,3 +1,6 @@
+; ru nshell
+(global-set-key (kbd "C-c z") (quote shell))
+
 ;ibuffer Mode;
 ; http://www.emacswiki.org/emacs/IbufferMode
 (global-set-key (kbd "C-x C-b") 'ibuffer)
