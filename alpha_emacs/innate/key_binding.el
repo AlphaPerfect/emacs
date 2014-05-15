@@ -10,8 +10,10 @@
 (global-set-key (kbd "C-O") 'other-window)
 
 ; buffer move
-(global-set-key (kbd "M-P") 'previous-buffer)
-(global-set-key (kbd "M-N") 'next-buffer)
+(global-set-key (kbd "C-M-p") 'previous-buffer)
+(global-set-key (kbd "C-M-n") 'next-buffer)
+;(global-set-key (kbd "M-P") 'previous-buffer)
+;(global-set-key (kbd "M-N") 'next-buffer)
 
 ; key binding for rename buffer
 (global-set-key (kbd "C-x M-s") 'rename-buffer)
