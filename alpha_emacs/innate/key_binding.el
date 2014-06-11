@@ -1,3 +1,9 @@
+(winner-mode 1)
+;; copied from http://blog.binchen.org/posts/emacs-zhong-de-wan-mei-duo-chuang-kou-cao-zuo.html
+
+(global-set-key (kbd "C-x 4 u") 'winner-undo)
+(global-set-key (kbd "C-x 4 r") 'winner-redo)
+
 ; ru nshell
 (global-set-key (kbd "C-c z") (quote shell))
 
