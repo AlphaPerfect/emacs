@@ -1,3 +1,6 @@
+;; the org log settng
+(setq org-log-done 'time)
+
 ;; replace the less for PAGER by cat
 (setenv "PAGER" "/bin/cat")
 
