@@ -1,6 +1,6 @@
 * Install on windows
 ** install mozilla-build
-   1. if you don't have the mozilla build then need to download 
+   1. if you don't have the mozilla build then need to download
       the mozilla build latest version
    2. modify the start-msvc10.dat add the content below
       rem start /d "%USERPROFILE%" ""
@@ -13,13 +13,14 @@
 ** checkout the elisp project from google code
    1. cd ~/
    2. svn checkout https://elisp.googlecode.com/svn/trunk/ elisp
-   
+
 ** install the font
    cd elisp/bitstream_vera_sans_mono
    install the font by double clicked
 
 ** runemacs
-   run start-msvc10.dat
-   runemacs
+   + run start-msvc10.dat
+   + runemacs
 
-
+** auctex
+   + brew install auctex --with-emacs=/usr/local/Cellar/emacs/24.3/bin/emacs
