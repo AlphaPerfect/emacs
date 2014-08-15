@@ -10,6 +10,12 @@
 ; language
 (add-to-list 'load-path "language")
 
+;;set c++ style as stroustrup style
+(add-hook 'c++-mode-hook
+ '(lambda()
+  (c-set-style "stroustrup")))
+
+
 ;; scheme mode
 (autoload 'paredit-mode "paredit"
   "Minor mode for pseudo-structurally editing Lisp code."  t)
@@ -46,3 +52,20 @@
                           (re-search-forward "@\\<interface\\>"
                                                   magic-mode-regexp-match-limit t)))
                   . objc-mode))
+
+;;;; init the smex
+(autoload 'smex "smex" nil t)
+;; (smex-initialize) ; Can be omitted. This might cause a (minimal) delay
+; when Smex is auto-initialized on its first run.
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; This is your old M-x.
+(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
+
+;; load yasnippet
+(add-to-list 'load-path "yasnippet")
+;(require 'init-yasnippet)
+
+;;; load company setting
+;(require 'init-company)
