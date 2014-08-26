@@ -25,9 +25,10 @@
 ** config emacs and build
    + cd emacs-24.3 &&  ./configure --without-x
 ** install auto-complete
-*** install cask (ref:http://cask.readthedocs.org/en/latest/guide/installation.html)
+*** autoinstall cask (ref:http://cask.readthedocs.org/en/latest/guide/installation.html)
     + $ curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
     + add_to_PATH $HOME/.cask/bin (add in alpha_bash)
+
 *** build auto-complete (ref:http://cx4a.org/software/auto-complete/manual.html)
     + git clone https://github.com/auto-complete/auto-complete
     + make install DIR=$HOME/.emacs.d/
