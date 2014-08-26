@@ -32,10 +32,12 @@
 ;    (load "~/work/ggcode/elisp/alpha_emacs/extensions/shell/shell_conf.el"))
 
 ; auto-complete config
-;(add-to-list 'load-path "auto_complete")
-;(if (file-exists-p "~/work/github/emacs/alpha_emacs/extensions/auto_complete/auto_complete_conf.el")
-;    (load "~/work/github/emacs/alpha_emacs/extensions/auto_complete/auto_complete_conf.el"))
+(add-to-list 'load-path "auto_complete")
+(if (file-exists-p "~/work/github/emacs/alpha_emacs/extensions/auto_complete/auto_complete_conf.el")
+    (load "~/work/github/emacs/alpha_emacs/extensions/auto_complete/auto_complete_conf.el"))
 
+
+;; xcscope
 (require 'xcscope)
 
 ;; markdown-mode
