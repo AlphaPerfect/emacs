@@ -11,10 +11,15 @@
 (add-to-list 'load-path "language")
 
 ;;set c++ style as stroustrup style
-(add-hook 'c++-mode-hook
- '(lambda()
-  (c-set-style "stroustrup")))
+;(add-hook 'c++-mode-hook
+; '(lambda()
+;  (c-set-style "stroustrup")))
 
+;; google c++ style 
+(require 'google-c-style)
+(add-hook 'c-mode-common-hook 'google-set-c-style)
+;; google return key to go to the next line and space over to the right place
+(add-hook 'c-mode-common-hook 'google-make-newline-indent)
 
 ;; scheme mode
 (autoload 'paredit-mode "paredit"
