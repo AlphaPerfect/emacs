@@ -1,6 +1,8 @@
 * tip
 ** org
-   1. 
+   1. check the error
+      - M-x toggle-debug-on-error
+
 ** help
    1. C-h c ...  //get the command info
    2. C-h k ...  //get the key info
@@ -19,27 +21,29 @@
 *** erase the ^M in windows format
     M-x replace-string RET C-q C-m RET RET
 *** Pop off global mark ring and jump to the top location
-    C-x C-SPC 
+    C-x C-SPC
    6. move to other window (note:conflict in org mode
       C-w w
       M-up M-down M-left M-right
 ** programming
-   1. move the cursor to the begin line no whitespace
-      M-m
-   2. intendent the whole marked area 
-      M C-\
-   3. Move backward across on balanced group of parentheses
-      C-M-p  C-M-n
-   4. Jump buff in *.c and *.cpp
-      F11
+*** cpp
+**** cpplint
+     - next error
+       C-x `  or M-g n M-g p
+**** key binding
+   - M-m (move the cursor to the begin line no whitespace)
+   - M C-\ (intendent the whole marked area)
+   - C-M-p  C-M-n (Move backward across on balanced group of parentheses)
+   - F11 (Jump buff in *.c and *.cpp)
+
 ** cscope
-   C-c s s             序找符号
-   C-c s g             寻找全局的定义
-   C-c s c             看看指定函数被哪些函数所调用
-   C-c s C             看看指定函数调用了哪些函数
-   C-c s e             寻找正则表达式
-   C-c s f             寻找文件
-   C-c s i             看看指定的文件被哪些文件include
+   - C-c s s
+   - C-c s g
+   - C-c s c
+   - C-c s C
+   - C-c s e
+   - C-c s f
+   - C-c s i
 ** encoding
 *** describe coding system
     C-h C RET
