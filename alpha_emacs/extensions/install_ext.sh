@@ -14,3 +14,6 @@ ${TSOCKS} wget https://raw.githubusercontent.com/redguardtoo/emacs.d/master/init
 
 ### install the window-numbering
 ${TSOCKS} wget https://raw.githubusercontent.com/nschum/window-numbering.el/master/window-numbering.el
+
+### install the buffer-move.el
+${TSOCKS} wget https://raw.githubusercontent.com/lukhas/buffer-move/master/buffer-move.el

@@ -4,7 +4,7 @@
 (global-set-key (kbd "C-x 4 u") 'winner-undo)
 (global-set-key (kbd "C-x 4 r") 'winner-redo)
 
-; ru nshell
+; run shell
 (global-set-key (kbd "C-c z") (quote shell))
 
 ;ibuffer Mode;
