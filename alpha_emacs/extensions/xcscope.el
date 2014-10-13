@@ -181,7 +181,7 @@
 ;; variable is used to determine the mapping.  One use for this
 ;; variable is when you want to share the database file with other
 ;; users; in this case, the database may be located in a directory
-;; separate from the source files.  
+;; separate from the source files.
 ;;
 ;; Setting the variable, `cscope-initial-directory', is useful when a
 ;; search is to be expanded by specifying a cscope database directory
@@ -367,7 +367,7 @@
 ;;      disable automatic database creation, updating, and
 ;;      maintenance.
 ;;
-;; "cscope-display-cscope-buffer" 
+;; "cscope-display-cscope-buffer"
 ;;      If non-nil, display the *cscope* buffer after each search
 ;;      (default).  This variable can be set in order to reduce the
 ;;      number of keystrokes required to navigate through the matches.
@@ -1222,7 +1222,7 @@ directory should begin.")
 			:style toggle :selected cscope-use-relative-paths ]
 		      [ "No mouse prompts" (setq cscope-no-mouse-prompts
 						 (not cscope-no-mouse-prompts))
-			:style toggle :selected cscope-no-mouse-prompts ] 
+			:style toggle :selected cscope-no-mouse-prompts ]
 		      )
 		    ))
 
@@ -1280,7 +1280,7 @@ The text properties to be added:
   )
 
 
-(defun cscope-show-entry-internal (file line-number 
+(defun cscope-show-entry-internal (file line-number
 					&optional save-mark-p window arrow-p)
   "Display the buffer corresponding to FILE and LINE-NUMBER
 in some window.  If optional argument WINDOW is given,
@@ -1930,7 +1930,7 @@ using the mouse."
 			    cscope-directory
 			    (file-name-directory cscope-directory))
 		      ))
-		(setq cscope-directory 
+		(setq cscope-directory
 		      (file-name-as-directory cscope-directory))
 		(if (not (member cscope-directory cscope-searched-dirs))
 		    (progn
@@ -2458,6 +2458,7 @@ file."
 
 (add-hook 'c-mode-hook (function cscope:hook))
 (add-hook 'c++-mode-hook (function cscope:hook))
+(add-hook 'go-mode-hook (function cscope:hook))
 (add-hook 'dired-mode-hook (function cscope:hook))
 
 (provide 'xcscope)
