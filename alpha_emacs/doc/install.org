@@ -26,15 +26,16 @@
    + cd emacs-24.3 &&  ./configure --without-x
 ** install auto-complete
 *** autoinstall cask (ref:http://cask.readthedocs.org/en/latest/guide/installation.html)
-    + $ curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+    + export http_proxy=http://proxy01.cd.intel.com:911/
+    + export socks_proxy=socks://proxy01.cd.intel.com:911/911
+    + $ tsocks curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | tsocks python
     + add_to_PATH $HOME/.cask/bin (add in alpha_bash)
 
 *** build auto-complete (ref:http://cx4a.org/software/auto-complete/manual.html)
     + git clone https://github.com/auto-complete/auto-complete
-    + make install DIR=$HOME/.emacs.d/
-*** install popup (ref:https://github.com/auto-complete/popup-el)
     + git clone https://github.com/auto-complete/popup-el
-    + cp popup.el emacs/alpha_emacs/extensions/auto_complete/
+    + cp popup-el/popup.el ~/soft/emacs/auto-complete/
+    + make install DIR=$HOME/.emacs.d/
 
 *** config auto-complete in exte_emacs.el
     + (add-to-list 'load-path "~/.emacs.d")
