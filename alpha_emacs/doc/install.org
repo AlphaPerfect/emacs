@@ -33,9 +33,12 @@
 
 *** build auto-complete (ref:http://cx4a.org/software/auto-complete/manual.html)
     + git clone https://github.com/auto-complete/auto-complete
+    + make install DIR=$HOME/.emacs.d/lisp
+*** install popup (have integrated into my alpha_emacs, so just need update or use old version)
+    + ref:https://github.com/auto-complete/popup-el)
     + git clone https://github.com/auto-complete/popup-el
     + cp popup-el/popup.el ~/soft/emacs/auto-complete/
-    + make install DIR=$HOME/.emacs.d/
+    + make install DIR=$HOME/.emacs.d/lisp
 
 *** config auto-complete in exte_emacs.el
     + (add-to-list 'load-path "~/.emacs.d")
@@ -43,5 +46,11 @@
     + (ac-config-default)
 
 * Install on mac
+** autocomplete
+*** install cask by homebrew
+    + brew install cask
+*** install autocomplete
+    + referfence ubuntu
+
 ** auctex
    + brew install auctex --with-emacs=/usr/local/Cellar/emacs/24.3/bin/emacs
