@@ -33,7 +33,7 @@
 ;; go mode
 (require 'go-mode)
 (require 'go-mode-load)
-
+(add-hook 'before-save-hook 'gofmt-before-save)
 ;; php mode
 (require 'php-mode)
 ; shell directory
