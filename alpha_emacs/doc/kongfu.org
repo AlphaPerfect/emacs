@@ -2,6 +2,9 @@
 ** org
    1. check the error
       - M-x toggle-debug-on-error
+   2.
+
+
 
 ** help
    1. C-h c ...  //get the command info
