@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d")
+(add-to-list 'load-path "~/.emacs.d/lisp")
 ;(require 'auto-complete-autoloads)
 (require 'go-autocomplete)
 (require 'auto-complete-config)
