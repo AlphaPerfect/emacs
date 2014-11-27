@@ -34,16 +34,21 @@
 *** build auto-complete (ref:http://cx4a.org/software/auto-complete/manual.html)
     + git clone https://github.com/auto-complete/auto-complete
     + make install DIR=$HOME/.emacs.d/lisp
-*** install popup (have integrated into my alpha_emacs, so just need update or use old version)
+*** install popup
+    + have integrated into my alpha_emacs, so just update or use old version
+    + update just need clone the code and diff, if need update then copy to the auto-complete
     + ref:https://github.com/auto-complete/popup-el)
     + git clone https://github.com/auto-complete/popup-el
     + cp popup-el/popup.el ~/soft/emacs/auto-complete/
-    + make install DIR=$HOME/.emacs.d/lisp
 
 *** config auto-complete in exte_emacs.el
     + (add-to-list 'load-path "~/.emacs.d")
     + (require 'auto-complete-config)
     + (ac-config-default)
+
+*** install the gocode to auto complete golang keyword
+    + ref:https://github.com/nsf/gocode
+    + go get -u github.com/nsf/gocode
 
 * Install on mac
 ** autocomplete
