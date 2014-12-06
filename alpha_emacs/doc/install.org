@@ -24,6 +24,12 @@
 * Install emacs on ubuntu
 ** config emacs and build
    + cd emacs-24.3 &&  ./configure --without-x
+** Install evil
+*** Install undo-tree
+    + git clone http://www.dr-qubit.org/git/undo-tree.git
+*** Install evil
+    + git clone git://gitorious.org/evil/evil.git
+
 ** install auto-complete
 *** autoinstall cask (ref:http://cask.readthedocs.org/en/latest/guide/installation.html)
     + export http_proxy=http://proxy01.cd.intel.com:911/

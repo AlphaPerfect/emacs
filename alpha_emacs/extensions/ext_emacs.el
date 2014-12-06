@@ -89,12 +89,6 @@
 (custom-set-faces '(window-numbering-face ((t (:foreground "DeepPink" :underline "DeepPink" :weight bold)))))
 (window-numbering-mode 1)
 
-;; switch-window
-;; https://github.com/dimitri/switch-window)
-(require 'switch-window)
-(global-set-key (kbd "C-x o") 'switch-window)
-
-
 ;; buffer-move.el
 (require 'buffer-move)
 (global-set-key (kbd "C-c C-b C-k") 'buf-move-up)
@@ -105,3 +99,7 @@
 ; (global-set-key (kbd "<C-S-down>")   'buf-move-down)
 ; (global-set-key (kbd "<C-S-left>")   'buf-move-left)
 ; (global-set-key (kbd "<C-S-right>")  'buf-move-right)
+
+;; evil mode
+(require 'evil)
+(evil-mode 1)

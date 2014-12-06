@@ -28,6 +28,13 @@
    6. move to other window (note:conflict in org mode
       C-w w
       M-up M-down M-left M-right
+
+** evil usage
+*** mode chage
+    + i or I  ( from Normal state <N> to Insert state <I> )
+    + C-z  ( from Normal state <N> to Emacs state <E> )
+
+
 ** programming
 *** cpp
 **** cpplint
