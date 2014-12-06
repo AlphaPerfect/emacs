@@ -101,13 +101,21 @@
 ; (global-set-key (kbd "<C-S-right>")  'buf-move-right)
 
 ;; undo-tree
-(add-to-list 'load-path "evil/lib")
+(add-to-list 'load-path "~/work/github/emacs/alpha_emacs/extensions/evil/lib")
 (require 'undo-tree)
 (global-undo-tree-mode 1)
 
 ;; evil mode
 (require 'evil)
 (evil-mode 1)
+
+;; {{ https://github.com/syl20bnr/evil-escape
+(require 'evil-escape)
+;; key-chord is used by evil-escape
+;; wget https://raw.githubusercontent.com/redguardtoo/emacs.d/master/site-lisp/key-chord/key-chord.el
+(setq key-chord-two-keys-delay 0.5)
+(evil-escape-mode 1)
+;; }}
 
 ;; web mode
 ;http://web-mode.org/
