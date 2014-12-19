@@ -1,9 +1,23 @@
 * tip
+** evil
+*** fold code
+    + zc fold
+    + zo unfold
+    + zC recursive fold
+    + zO recursive unfold
+    + zM fold all code
+    + zR unfold all code
+*** jump
+    + ctrl ]  jump the function, need the tags
+    + ctrl t return the old jump palce
+    + gD     jump to the global variable define
+    + gd     jump to the local variable define
+    + ctrl o jump the previous edit place
+    + ctrl i jump the next
 ** org
    1. check the error
       - M-x toggle-debug-on-error
    2.
-
 
 
 ** help
