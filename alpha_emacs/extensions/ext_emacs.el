@@ -108,17 +108,25 @@
 ;; evil mode
 (require 'evil)
 (evil-mode 1)
+(add-hook 'evil-insert-state-entry-hook 'evil-emacs-state)
+(define-key evil-emacs-state-map (kbd "C-[") 'evil-normal-state)
+(define-key evil-visual-state-map (kbd "i") 'evil-emacs-state)
 
-;; {{ https://github.com/syl20bnr/evil-escape
-(require 'evil-escape)
 ;; key-chord is used by evil-escape
 ;; wget https://raw.githubusercontent.com/redguardtoo/emacs.d/master/site-lisp/key-chord/key-chord.el
-(setq key-chord-two-keys-delay 0.5)
-(evil-escape-mode 1)
+(require 'key-chord)
+(key-chord-mode 1)
+(setq key-chord-two-keys-delay 0.2)
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+(key-chord-define evil-emacs-state-map "jk" 'evil-normal-state)
+
+;; {{ https://github.com/syl20bnr/evil-escape
+;(require 'evil-escape)
+;(evil-escape-mode 1)
 ;; }}
 
 ;; web mode
-;http://web-mode.org/
+;;http://web-mode.org/
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
