@@ -137,3 +137,41 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\'" . web-mode))
+
+;; {{ evil-leader config
+(add-to-list 'load-path "~/work/github/emacs/alpha_emacs/extensions/evil_ext")
+(setq evil-leader/leader ",")
+(require 'evil-leader)
+(evil-leader/set-key
+  "ae" 'evil-ace-jump-word-mode ; ,e for Ace Jump (word)
+  "al" 'evil-ace-jump-line-mode ; ,l for Ace Jump (line)
+  "ac" 'evil-ace-jump-char-mode ; ,x for Ace Jump (char)
+  "as" 'ack-same
+  "ac" 'ack
+  "aa" 'ack-find-same-file
+  "af" 'ack-find-file
+  "bf" 'beginning-of-defun
+  "bu" 'backward-up-list
+  "bb" '(lambda () (interactive) (switch-to-buffer nil))
+  "ef" 'end-of-defun
+  "db" 'sdcv-search-pointer ;; in another buffer
+  "dt" 'sdcv-search-input+ ;; in tip
+  "mf" 'mark-defun
+  "0" 'select-window-0
+  "1" 'select-window-1
+  "2" 'select-window-2
+  "3" 'select-window-3
+  "4" 'select-window-4
+  "5" 'select-window-5
+  "6" 'select-window-6
+  "7" 'select-window-7
+  "8" 'select-window-8
+  "9" 'select-window-9
+  "xm" 'smex
+  "mx" 'helm-M-x
+  "xx" 'er/expand-region
+  "xf" 'ido-find-file
+  "xb" 'ido-switch-buffer
+)
+
+(global-evil-leader-mode)
