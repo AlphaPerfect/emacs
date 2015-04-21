@@ -32,10 +32,14 @@
 
 ** install auto-complete
 *** autoinstall cask (ref:http://cask.readthedocs.org/en/latest/guide/installation.html)
-    + export http_proxy=http://proxy01.cd.intel.com:911/
-    + export socks_proxy=socks://proxy01.cd.intel.com:911/911
-    + $ tsocks curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | tsocks python
-    + add_to_PATH $HOME/.cask/bin (add in alpha_bash)
+    #+begin_src  -t
+    $ export http_proxy=http://proxy01.cd.intel.com:911/
+    $ export socks_proxy=socks://proxy01.cd.intel.com:911/911
+    $ tsocks curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | tsocks python
+    $ add_to_PATH $HOME/.cask/bin (add in alpha_bash)
+    $ cd alpha_emacs && cask install
+    #+end_src
+
 
 *** build auto-complete (ref:http://cx4a.org/software/auto-complete/manual.html)
     + git clone https://github.com/auto-complete/auto-complete
@@ -65,3 +69,32 @@
 
 ** auctex
    + brew install auctex --with-emacs=/usr/local/Cellar/emacs/24.3/bin/emacs
+
+
+* python plugin
+** python-mode
+   + The major ones are python.el which comes with Emacs 24.2 and up and python-mode.el,
+   + which is the most comprehensive
+** virtualenv
+   #+begin_src shell -t
+    $ sudo pip --proxy http://xxxx install virtualenv
+   #+end_src
+** auto complete
+*** install jedi (ref: https://github.com/davidhalter/jedi)
+   #+begin_src shell -t
+    $ sudo pip install jedi
+     or
+    $ git clone https://github.com/davidhalter/jedi
+    $ sudo python setup.py install
+   #+end_src
+*** install emacs-jedi (ref:http://tkf.github.io/emacs-jedi/latest/)
+**** by cask
+     #+begin_src shell -t
+      $ ln -s ${PWD}/Cask ~/.emacs.d/Cask
+      $ cd ~/.emacs.d/Cask && cask install
+     #+end_src
+
+*** usage
+     #+begin_src shell -t
+       $ M-x jedi:install-server
+     #+end_src

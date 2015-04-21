@@ -1,6 +1,14 @@
 ;; .emacs for ubuntu
 ;; usage: sh auto_install.sh
 
+(unless (= emacs-major-version 24)
+  (error "Emacs version 24 is required"))
+
+
+(add-to-list 'load-path "~/.cask")
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+
 (if (file-exists-p "~/work/github/emacs/alpha_emacs/innate/basic.el")
     (load "~/work/github/emacs/alpha_emacs/innate/basic.el"))
 

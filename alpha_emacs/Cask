@@ -1,0 +1,6 @@
+(source gnu)
+(source melpa)
+(source marmalade)
+
+(depends-on "jedi")
+(depends-on "virtualenvwrapper")
