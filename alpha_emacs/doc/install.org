@@ -98,3 +98,8 @@
      #+begin_src shell -t
        $ M-x jedi:install-server
      #+end_src
+
+ ** mac tips
+    + when you met the socket error below:
+      socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+    + edit /etc/hosts, add 127.0.0.1 localhost

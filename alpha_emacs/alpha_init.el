@@ -5,8 +5,18 @@
   (error "Emacs version 24 is required"))
 
 
-(add-to-list 'load-path "~/.cask")
-(require 'cask "~/.cask/cask.el")
+(if (file-exists-p "~/.cask/cask.el")
+	(add-to-list 'load-path "~/.cask"))
+
+(if (file-exists-p "~/.cask/cask.el")
+	(require 'cask "~/.cask/cask.el"))
+
+(if (file-exists-p "/usr/local/Cellar/cask/0.7.2/cask.el")
+	(add-to-list 'load-path "/usr/local/Cellar/cask/0.7.2"))
+
+(if (file-exists-p "/usr/local/Cellar/cask/0.7.2/cask.el")
+	(require 'cask "/usr/local/Cellar/cask/0.7.2/cask.el"))
+
 (cask-initialize)
 
 (if (file-exists-p "~/work/github/emacs/alpha_emacs/innate/basic.el")
