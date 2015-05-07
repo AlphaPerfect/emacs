@@ -14,6 +14,15 @@
     + gd     jump to the local variable define
     + ctrl o jump the previous edit place
     + ctrl i jump the next
+*** translate
+    + guw upper to lowcase
+    + gUw lowcase to uppper
+    + gue gUe gu5w gu5e
+    + ~ 3~ # between the upper and lowcase changed the char under the cursor
+    + g~~  gUU # the current line
+    + 3gUU # three line below
+    + gU0 gU$ gUG gU1G
+
 ** org
    1. check the error
       - M-x toggle-debug-on-error
