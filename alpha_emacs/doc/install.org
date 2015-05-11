@@ -65,6 +65,8 @@
 *** install cask by homebrew
     + brew install cask
 *** install autocomplete
+    + install cask
+    + $ curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
     + referfence ubuntu
 
 ** auctex
