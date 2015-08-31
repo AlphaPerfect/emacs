@@ -33,6 +33,9 @@
 ** install auto-complete
 *** autoinstall cask (ref:http://cask.readthedocs.org/en/latest/guide/installation.html)
     #+begin_src  -t
+    $ curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+    $ cd alpha_emacs && cask install
+    # install on intel
     $ export http_proxy=http://proxy01.cd.intel.com:911/
     $ export socks_proxy=socks://proxy01.cd.intel.com:911/911
     $ tsocks curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | tsocks python
