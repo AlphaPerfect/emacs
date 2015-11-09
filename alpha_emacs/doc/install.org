@@ -22,8 +22,12 @@
    + run start-msvc10.dat
    + runemacs
 * Install emacs on ubuntu
+** requirments
+   #+begin_src  -t
+    $ sudo aptitude install libncurses5-dev
+   #+end_src
 ** config emacs and build
-   + cd emacs-24.3 &&  ./configure --without-x
+   + cd emacs-24.5 &&  ./configure --prefix=$HOME/soft/install/emacs --without-x
 ** Install evil
 *** Install undo-tree
     + git clone http://www.dr-qubit.org/git/undo-tree.git
@@ -72,7 +76,7 @@
     #+begin_src shell -t
      $ curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
      # use cask
-     $ EMACS="/home/alpha/soft/install/emacs/bin/emacs" ~/.cask/bin/cask install
+     $ EMACS="/home/alph
     #+end_src
     + referfence ubuntu
 

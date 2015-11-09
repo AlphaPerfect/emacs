@@ -13,7 +13,7 @@
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 
 ; move to other window
-(global-set-key (kbd "C-O") 'other-window)
+;(global-set-key (kbd "C-O") 'other-window)
 ;(global-set-key [C-tab] 'other-window)
 ;(global-set-key [(control tab)] 'other-window)
 

@@ -36,6 +36,9 @@
    4. C-h v ...  //get the variable info
    5. C-h a ...  //list all info contained the key info to find apropos
 ** edit
+*** select all
+    C-x h
+    M-x mark-whole-buffer
 *** get the Key translations starting with C-x 8
     C-x 8 C-h
 *** balance-windows
