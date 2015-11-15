@@ -4,7 +4,6 @@
 (unless (= emacs-major-version 24)
   (error "Emacs version 24 is required"))
 
-
 (if (file-exists-p "~/.cask/cask.el")
 	(add-to-list 'load-path "~/.cask"))
 
@@ -16,9 +15,9 @@
 
 (if (file-exists-p "/usr/local/Cellar/cask/0.7.2/cask.el")
 	(require 'cask "/usr/local/Cellar/cask/0.7.2/cask.el"))
-
+ 
 (cask-initialize)
-
+  
 (if (file-exists-p "~/work/github/emacs/alpha_emacs/innate/basic.el")
     (load "~/work/github/emacs/alpha_emacs/innate/basic.el"))
 

@@ -1,4 +1,16 @@
 * INSTALL
+** Windows
+    #+begin_src shell -t
+     # install emacs of windows
+       $ wget xxxx 
+     # get the spacemacs config file to configiration directory
+       $ cd /c/Users/use_name/AppData/Roaming
+       $ git clone https://github.com/syl20bnr/spacemacs .emacs.d
+     # Start emacs
+       $ runemacs (if error, then add --debug-init) 
+       # if occured error, then rm the error package in elpa
+   #+end_src
+   
 ** MAC
    #+begin_src shell -t
      # install by homebrew
