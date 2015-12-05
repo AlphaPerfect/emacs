@@ -27,6 +27,7 @@ values."
      ;; better-defaults
      emacs-lisp
      lua
+     python
      ;; git
      ;; markdown
      ;; org
