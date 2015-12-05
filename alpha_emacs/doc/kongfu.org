@@ -1,4 +1,8 @@
 * tip
+** Top
+   + select all: c-x h or M-x mark-whole-buffer
+   + run shell cmd in buff: M-|
+
 ** evil
 *** fold code
     + zc fold
