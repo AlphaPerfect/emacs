@@ -67,3 +67,11 @@
     dotspacemacs-maximized-at-startup t
     #+END_SRC
    
+
+* Usage
+** keybinding
+   + help doc:layers/+distribution/spacemacs-base/keybindings.el
+*** window control
+    + space wu (winner-undo)
+    + space wU (winner-redo)
+
