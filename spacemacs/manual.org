@@ -72,6 +72,18 @@
 ** keybinding
    + help doc:layers/+distribution/spacemacs-base/keybindings.el
 *** window control
-    + space wu (winner-undo)
-    + space wU (winner-redo)
+    + <space> wu (winner-undo)
+    + <space> wU (winner-redo)
+*** set line number
+    + <space> t n
+*** display 80 column
+    + <space> t f
+*** quick jump
+    + <space> l
+    + <space> <space>
+    + <space> `
+*** neotree
+    + <space> f t
+*** outline in file
+    + <space> s l
 
