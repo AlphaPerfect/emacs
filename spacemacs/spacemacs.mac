@@ -28,10 +28,10 @@ values."
      emacs-lisp
      python
      lua
-     git
      go
-     markdown
+     git
      org
+     markdown
      html
      javascript
      (colors :variables
