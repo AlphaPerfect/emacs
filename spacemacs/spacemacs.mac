@@ -39,8 +39,8 @@ values."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
+     (spell-checking :variables spell-checking-enable-by-default nil)
+     (syntax-checking :variables syntax-checking-enable-by-default nil)
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -205,8 +205,11 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (global-company-mode t)
   (setq-default evil-escape-key-sequence "jk")
+  (global-company-mode t)
+  (add-hook 'text-mode-hook 'auto-fill-mode)
+  (add-hook 'org-mode-hook 'auto-fill-mode)
+  ;(setq-default powerline-default-separator 'arrow)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
