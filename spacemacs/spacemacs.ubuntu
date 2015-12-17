@@ -28,9 +28,10 @@ values."
      emacs-lisp
      lua
      python
-     ;; git
-     ;; markdown
-     ;; org
+     go
+     git
+     org
+     markdown
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -201,7 +202,8 @@ user code."
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (global-company-mode t)
-)
+  (setq-default evil-escape-key-sequence "jk")
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
