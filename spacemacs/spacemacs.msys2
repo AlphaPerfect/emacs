@@ -25,8 +25,21 @@ values."
      ;; ----------------------------------------------------------------
      ;; auto-completion
      ;; better-defaults
+     auto-completion
+     better-defaults
      emacs-lisp
+     python
      lua
+     git
+     go
+     markdown
+     org
+     html
+     javascript
+     (colors :variables
+             colors-enable-nyan-cat-progress-bar t)
+     (spell-checking :variables spell-checking-enable-by-default nil)
+     (syntax-checking :variables syntax-checking-enable-by-default nil)
      ;; git
      ;; markdown
      ;; org
@@ -199,6 +212,10 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
+  (setq-default evil-escape-key-sequence "jk")
+  (global-company-mode t)
+  (add-hook 'text-mode-hook 'auto-fill-mode)
+  (add-hook 'org-mode-hook 'auto-fill-mode)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
