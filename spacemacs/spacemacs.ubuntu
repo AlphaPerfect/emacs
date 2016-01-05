@@ -26,6 +26,7 @@ values."
      auto-completion
      better-defaults
      emacs-lisp
+     erlang
      c-c++
      python
      lua
