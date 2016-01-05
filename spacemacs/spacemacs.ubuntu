@@ -28,6 +28,7 @@ values."
      emacs-lisp
      erlang
      c-c++
+     semantic              ;; too slow ?
      python
      lua
      go
@@ -44,6 +45,8 @@ values."
      ;; version-control
      (spell-checking :variables spell-checking-enable-by-default nil)
      (syntax-checking :variables syntax-checking-enable-by-default nil)
+     (c-c++ :variables c-c++-default-mode-for-headers 'c++-mode)
+     (c-c++ :variables c-c++-enable-clang-support t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
