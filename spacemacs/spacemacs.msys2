@@ -23,32 +23,33 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
-     ;; better-defaults
      auto-completion
      better-defaults
+     github
+     version-control
+     semantic            ; too slow
      emacs-lisp
+     erlang
+     elixir
      python
      lua
-     git
      go
-     markdown
+     git
      org
+     markdown
+     yaml
      html
      javascript
+     (c-c++ :variables c-c++-default-mode-for-headers 'c++-mode)
+     (ibuffer :variables ibuffer-group-buffers-by 'projects)
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
-     (spell-checking :variables spell-checking-enable-by-default nil)
-     (syntax-checking :variables syntax-checking-enable-by-default nil)
-     ;; git
-     ;; markdown
-     ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
+     (syntax-checking :variables syntax-checking-enable-by-default nil)
+     (spell-checking :variables spell-checking-enable-by-default nil)
+
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -85,6 +86,7 @@ values."
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
    dotspacemacs-startup-banner 'official
+   ;dotspacemacs-startup-banner '000
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'.
    ;; (default '(recents projects))
@@ -92,7 +94,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(tsdh-dark
+                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
@@ -104,7 +107,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 11
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -206,6 +209,9 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
+  (setq-default
+   erlang-indent-level 2
+   )
   )
 
 (defun dotspacemacs/user-config ()
@@ -214,8 +220,14 @@ user code."
 layers configuration. You are free to put any user code."
   (setq-default evil-escape-key-sequence "jk")
   (global-company-mode t)
+  (global-flycheck-mode t)
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
+  ;(setq-default powerline-default-separator 'arrow)
+  ;;解决org表格里面中英文对齐的问题
+  (when (configuration-layer/layer-usedp 'chinese)
+    (when (spacemacs/system-is-mac)
+      (spacemacs//set-monospaced-font "Source Code Pro" "Hiragino Sans GB" 14 16)))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
