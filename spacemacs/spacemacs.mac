@@ -24,23 +24,26 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      auto-completion
+     company-mode
      better-defaults
      github
      version-control
      osx
      semantic            ; too slow
      emacs-lisp
-     erlang
-     elixir
      python
      lua
      go
      git
      org
      markdown
+     latex
      yaml
      html
      javascript
+     elixir
+     ;(erlang :variables erlang-root-dir '/usr/local/Cellar/erlang/18.1)
+     erlang
      (c-c++ :variables c-c++-default-mode-for-headers 'c++-mode)
      (c-c++ :variables c-c++-enable-clang-support t)
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
@@ -210,9 +213,9 @@ values."
   "Initialization function for user code.
 It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
-  (setq-default
-   erlang-indent-level 2
-   )
+  ;; erlang configuration
+  (setq-default erlang-indent-level 2)
+  ;;(setq erlang-man-root-dir "/usr/lib/erlang/erts-5.10.3/man")
   )
 
 (defun dotspacemacs/user-config ()
@@ -233,3 +236,5 @@ layers configuration. You are free to put any user code."
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(provide '.spacemacs)
+;;; .spacemacs ends here
