@@ -23,6 +23,7 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     eyebrowse
      auto-completion
      better-defaults
      github
@@ -45,7 +46,7 @@ values."
      (c-c++ :variables c-c++-enable-clang-support t)
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      (colors :variables
-             colors-enable-nyan-cat-progress-bar t)
+             colors-enable-nyan-cat-progress-bar (display-graphic-p))
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
