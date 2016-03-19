@@ -24,29 +24,31 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      eyebrowse
-     auto-completion
+     (auto-completion :variables auto-completion-enable-sort-by-usage t)
      company-mode
      better-defaults
+     (version-control :variables version-control-diff-tool 'diff-h)
+     (git :variables git-magit-status-fullscreen t)
      github
-     version-control
      osx
      semantic            ; too slow
      emacs-lisp
      python
      lua
      go
-     git
-     org
      markdown
-     latex
+     (latex :variables latex-enable-auto-fill t)
      yaml
      html
+     sql
      javascript
      elixir
      ;(erlang :variables erlang-root-dir '/usr/local/Cellar/erlang/18.1)
      erlang
-     (c-c++ :variables c-c++-default-mode-for-headers 'c++-mode)
-     ;(c-c++ :variables c-c++-enable-clang-support t)
+     (org :variables org-enable-github-support t)
+     (c-c++ :variables
+            c-c++-default-mode-for-headers 'c++-mode)
+            ;c-c++-enable-clang-support t)
      (ibuffer :variables ibuffer-group-buffers-by 'projects)
      (colors :variables
              ;colors-enable-rainbow-identifiers nil
@@ -115,7 +117,7 @@ values."
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 11
+                               :size 12
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -219,7 +221,6 @@ It is called immediately after `dotspacemacs/init'.  You are free to put any
 user code."
   ;; erlang configuration
   (setq-default erlang-indent-level 2)
-  ;;(setq erlang-man-root-dir "/usr/lib/erlang/erts-5.10.3/man")
   )
 
 (defun dotspacemacs/user-config ()
@@ -227,8 +228,14 @@ user code."
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
   (setq-default evil-escape-key-sequence "jk")
+  (setq-default evil-escape-delay 0.6)
   (global-company-mode t)
   (global-flycheck-mode t)
+  ;; elang setting 
+  ;; mac osx erlang install by homebrew
+  (setq-default erlang-man-root-dir "/usr/local/Cellar/erlang/18.1/lib/erlang/man/man1")
+  ;; linux ubuntu
+  ;(setq-default erlang-man-root-dir "/usr/lib/erlang/erts-5.10.3/man")
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
   ;(setq-default powerline-default-separator 'arrow)
