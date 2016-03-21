@@ -28,13 +28,9 @@ fi
 # build and install
 mkdir -p $HOME/soft/install/emacs
 cd emacs-"$version"
-./configure \
-    --prefix=$HOME/soft/install/emacs \
+./configure --prefix=$HOME/soft/install/emacs \
     --with-xft \
     --with-x-toolkit=lucid
 
-make
-sudo make \
-    install-arch-dep \
-    install-arch-indep \
-    prefix=$HOME/soft/install/emacs-"$version"
+make && make install-arch-dep install-arch-indep \
+             prefix=$HOME/soft/install/emacs
