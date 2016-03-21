@@ -29,7 +29,7 @@ fi
 mkdir -p $HOME/soft/install/emacs
 cd emacs-"$version"
 ./configure \
-    --prefix=$HOME/soft/install/emacs
+    --prefix=$HOME/soft/install/emacs \
     --with-xft \
     --with-x-toolkit=lucid
 
