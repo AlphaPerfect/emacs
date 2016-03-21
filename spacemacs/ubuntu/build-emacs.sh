@@ -38,5 +38,3 @@ sudo make \
     install-arch-dep \
     install-arch-indep \
     prefix=$HOME/soft/install/emacs-"$version"
-
-sudo stow emacs-"$version"
