@@ -10,7 +10,7 @@ set -eu
 readonly version="24.5"
 
 # install dependencies
-sudo apt-get -qq update
+#sudo apt-get -qq update
 sudo apt-get -qq install -y stow build-essential libx11-dev xaw3dg-dev \
      libjpeg-dev libpng12-dev libgif-dev libtiff5-dev libncurses5-dev \
      libxft-dev librsvg2-dev libmagickcore-dev libmagick++-dev \
