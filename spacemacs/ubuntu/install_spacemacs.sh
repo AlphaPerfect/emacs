@@ -16,6 +16,6 @@ if [ -f ~/.spacemacs ]; then
     echo "unlink the old link file ~/.spacemacs"
     ln -s ${SPACEMACS_CONFIG_DIR}/spacemacs.ubuntu ~/.spacemacs
 else
-    echo "add soft link from ${PWD}/spacemacs to ~/.spacemacs"
-    ln -s ${SPACEMACS_CONFIG_DIR=}/spacemacs.ubuntu ~/.spacemacs
+    echo "add soft link from ${SPACEMACS_CONFIG_DIR}/spacemacs to ~/.spacemacs"
+    ln -s ${SPACEMACS_CONFIG_DIR}/spacemacs.ubuntu ~/.spacemacs
 fi
