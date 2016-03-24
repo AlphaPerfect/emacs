@@ -3,7 +3,7 @@
 GITHUB_DIR=$HOME/work/github
 SPACEMACS_CONFIG_DIR=$GITHUB_DIR/emacs/spacemacs/ubuntu
 
-if [ -f $GITHUB_DIR/spacemacs ]; then
+if [ -d $GITHUB_DIR/spacemacs ]; then
     echo "the $SPACEMACS_DIR has exist"
 else
     mkdir -p $GITHUB_DIR
