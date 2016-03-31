@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 GITHUB_DIR=$HOME/work/github
 SPACEMACS_CONFIG_DIR=$GITHUB_DIR/emacs/spacemacs/ubuntu
