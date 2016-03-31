@@ -11,7 +11,7 @@ fi
 
 # clone the spacemacs repository
 if [ -d $GITHUB_DIR/spacemacs ]; then
-    echo "The $SPACEMACS_DIR has exist"
+    echo "The $GITHUB_DIR/spacemacs has exist"
 else
     cd $GITHUB_DIR && git clone https://github.com/syl20bnr/spacemacs 
     ln -s $GITHUB_DIR/spacemacs ~/.emacs.d 
@@ -23,8 +23,6 @@ SPACEMACS_CONFIG_FILE=$SPACEMACS_CONFIG_DIR/spacemacs.mac
 if [ -f ~/.spacemacs ]; then
     unlink ~/.spacemacs 
     echo "unlink the old link file ~/.spacemacs"
-    ln -s ${SPACEMACS_CONFIG_FILE} ~/.spacemacs
-else
-    echo "add soft link from ${SPACEMACS_CONFIG_FILE} to ~/.spacemacs"
-    ln -s ${SPACEMACS_CONFIG_FILE} ~/.spacemacs
 fi
+echo "add soft link from ${SPACEMACS_CONFIG_FILE} to ~/.spacemacs"
+ln -s ${SPACEMACS_CONFIG_FILE} ~/.spacemacs
