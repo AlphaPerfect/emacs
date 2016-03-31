@@ -18,7 +18,7 @@ else
 fi
 
 # config the emacs by spacemacs.mac 
-SPACEMACS_CONFIG_DIR=$EMACS_DIR/emacs/spacemacs/mac
+SPACEMACS_CONFIG_DIR=$GITHUB_DIR/emacs/spacemacs/mac
 SPACEMACS_CONFIG_FILE=$SPACEMACS_CONFIG_DIR/spacemacs.mac
 if [ -f ~/.spacemacs ]; then
     unlink ~/.spacemacs 
