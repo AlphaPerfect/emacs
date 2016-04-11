@@ -27,7 +27,8 @@ values."
      (auto-completion :variables auto-completion-enable-sort-by-usage t)
      company-mode
      better-defaults
-     (version-control :variables version-control-diff-tool 'diff-h)
+     version-control
+     ;;(version-control :variables version-control-diff-tool 'diff-h)
      (git :variables git-magit-status-fullscreen t)
      github
      osx
