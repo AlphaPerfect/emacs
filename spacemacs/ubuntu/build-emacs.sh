@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Build latest version of Emacs, version management with stow
 # OS: Ubuntu 14.04 LTS and newer
@@ -20,17 +20,22 @@ sudo apt-get install -y stow build-essential libx11-dev xaw3dg-dev \
 # download source package
 mkdir -p $HOME/soft/emacs
 cd $HOME/soft/emacs/
-if [[ ! -d emacs-"$version" ]]; then
+if [ ! -d emacs-"$version" ]; then
    wget http://ftp.gnu.org/gnu/emacs/emacs-"$version".tar.xz
    tar xvf emacs-"$version".tar.xz
 fi
 
 # build and install
-mkdir -p $HOME/soft/install/emacs
-cd emacs-"$version"
-./configure --prefix=$HOME/soft/install/emacs \
-    --with-xft \
-    --with-x-toolkit=lucid
+EMACS_INSTALL_DIR=$HOME/soft/install/emacs
+if [ -d $EMACS_INSTALL_DIR ]; then
+    echo "The $EMACS_INSTALL_DIR has exist"
+else
+    mkdir -p $EMACS_INSTALL_DIR
+    cd emacs-"$version"
+    ./configure --prefix=$EMACS_INSTALL_DIR\
+                --with-xft \
+                --with-x-toolkit=lucid
 
-make && make install-arch-dep install-arch-indep \
-             prefix=$HOME/soft/install/emacs
+    make && make install-arch-dep install-arch-indep \
+                 prefix=$EMACS_INSTALL_DIR
+fi
