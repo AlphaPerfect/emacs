@@ -234,9 +234,9 @@ layers configuration. You are free to put any user code."
   (global-flycheck-mode t)
   ;; elang setting 
   ;; mac osx erlang install by homebrew
-  (setq-default erlang-man-root-dir "/usr/local/Cellar/erlang/18.1/lib/erlang/man/man1")
+  ;;(setq-default erlang-man-root-dir "/usr/local/Cellar/erlang/18.1/lib/erlang/man/man1")
   ;; linux ubuntu
-  ;(setq-default erlang-man-root-dir "/usr/lib/erlang/erts-5.10.3/man")
+  (setq-default erlang-man-root-dir "/usr/lib/erlang/erts-5.10.3/man")
   (add-hook 'text-mode-hook 'auto-fill-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
   ;(setq-default powerline-default-separator 'arrow)
@@ -244,9 +244,57 @@ layers configuration. You are free to put any user code."
   (when (configuration-layer/layer-usedp 'chinese)
     (when (spacemacs/system-is-mac)
       (spacemacs//set-monospaced-font "Source Code Pro" "Hiragino Sans GB" 11 14)))
+
+  ;; copy frm github.com/scturtle/dotfiles/blob/master/.spacemacs begin
+  ;; use en_US.UTF-8 for git
+  (add-hook 'magit-mode-hook
+            (lambda ()
+              (defadvice magit-start-process (around lang-en_US activate)
+                (let ((process-environment process-environment))
+                  (setenv "LC_ALL" "en_US.UTF-8")
+                  ad-do-it))
+              (defadvice magit-call-process (around lang-en_US activate)
+                "Set LANG to en_US."
+                (let ((process-environment process-environment))
+                  (setenv "LC_ALL" "en_US.UTF-8")
+                  ad-do-it))))
+  ;; encoding
+  (prefer-coding-system 'chinese-gbk)
+  (prefer-coding-system 'utf-8)
+
+  ;; undo-tree
+  (setq undo-tree-auto-save-history t
+        undo-tree-history-directory-alist
+        `(("." . ,(concat user-home-directory ".undo"))))
+
+  (setq company-idle-delay 0.5)
+  (setq flycheck-check-syntax-automatically '(mode-enabled save))
+
+  ;; aspell
+  (setq flyspell-default-dictionary "english")
+  (setq ispell-program-name "/usr/local/bin/aspell")
+  ;; c++
+  ;; xcode-select --install
+  ;; xcode-select -switch /Library/Developer/CommandLineTools
+  (with-eval-after-load 'c++
+    (spacemacs/set-leader-keys-for-major-mode 'c++-mode
+      "o=" 'clang-format-region))
+
+  (add-hook 'c++-mode-hook
+            (lambda ()
+              ;; quick compilation
+              (set (make-local-variable 'compile-command)
+                   (concat "g++ -std=c++11 -Wall " buffer-file-name " && ./a.out"))
+              ;; (push 'company-semantic company-backends)
+              (setq company-clang-arguments '("-std=c++11"))
+              (setq flycheck-clang-language-standard "c++11")
+              (add-to-list 'company-c-headers-path-system
+                           "/usr/include/c++/4.8")
+              ))
+  ;; copy from github.com/scturtle end
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(provide '.spacemacs)
 ;;; .spacemacs ends here
