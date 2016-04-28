@@ -46,6 +46,10 @@ values."
      elixir
      ;(erlang :variables erlang-root-dir '/usr/local/Cellar/erlang/18.1)
      erlang
+     gtags
+     helm
+     helm-ag
+     helm-gtags
      (org :variables org-enable-github-support t)
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
