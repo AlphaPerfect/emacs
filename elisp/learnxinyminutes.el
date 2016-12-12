@@ -11,20 +11,20 @@
 (setq my-name "Damon")
 
 ;; 'insert' will insert "Hello!" where the cursor is
-(insert "Hello!")
+(insert "Hello!")Hello!
 
 ;; We used `insert' with only on arguemnt "Hello!", but
 ;; we can pass more arguments -- here we use two:
-(insert "Hello" " world!")
+(insert "Hello" " world!")Hello world!
 
 ;; You can use variables instead of strings
-(insert "Hello, I am " my-name)
+(insert "Hello, I am " my-name)Hello, I am Damon
 
 ;; You can combine sexps into functions:
 (defun hello() (insert "Hello, I am " my-name))
 
 ;; You can evaluate functions:
-(hello)
+(hello)Hello, I am Damon
 
 ;; The empty parentheses in the function's definition means that
 ;; it does not accept arguments. But always using `my-name' is 
@@ -34,7 +34,7 @@
 
 ;; Now let's call the function with the string "you" ass the value
 ;; for its unique argument:
-(hello "you are damon")
+(hello "you are damon")Hello you are damon
 
 ;; Yeah! Take a breath
 
@@ -149,6 +149,7 @@
   (mapcar 'hello list-of-names)
   (other-window 1)
   )
+
 (greeting)
 
 ;; Remember the `hello' function we defined above? It takes one
@@ -215,8 +216,30 @@
 ;; The regular expression is "Bonjour \\(.+\\)!" and it reads:
 ;; the string "Bonjour ", and
 ;; a group of | this is the \\( ... \\) construct
+;;   any character      | this is the .
+;;   possibly repeated  | this is the +
+;; and the "!" string.
 
+;; Ready? Test it!
 
+(boldify-names)
+
+;; `add-text-properties` adds... text properties, like a face.
+
+;; OK, we are done. Happy hacking!
+
+;; If you want to know more about a variable or a function:
+;;
+
+;; C-h v a-variable RET
+;; C-h f a-function RET
+
+;; To read the Emacs Lisp manual with Emacs:
+;; C-h i m elisp RET
+;;
+;;
+;;
+;;
 
 
 
