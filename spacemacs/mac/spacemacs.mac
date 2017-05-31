@@ -51,7 +51,7 @@ values."
      emacs-lisp
      python
      lua
-     go
+     (go :variables go-tab-width 2)
      markdown
      (latex :variables latex-enable-auto-fill t)
      yaml
