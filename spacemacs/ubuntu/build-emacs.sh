@@ -2,12 +2,12 @@
 
 # Build latest version of Emacs, version management with stow
 # OS: Ubuntu 14.04 LTS and newer
-# version: 24.5
+# version: 25.2
 # Toolkit: lucid
 
 set -eu
 
-readonly version="25.1"
+readonly version="25.2"
 
 # install dependencies
 #sudo apt-get -qq update

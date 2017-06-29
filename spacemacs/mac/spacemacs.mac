@@ -285,11 +285,12 @@ layers configuration. You are free to put any user code."
     :config
     (setq org-startup-indented t))
 
-  (spacemacs|add-company-backends :modes text-mode)
+  ;;(spacemacs|add-company-backends :modes text-mode)
 
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
-  (setq-default evil-escape-key-sequence "jk")
+  (setq-default evil-escape-key-sequence "fd")
+  ;;;(defcustom evil-escape-key-sequence (kbd "fd")
   (setq-default evil-escape-delay 0.6)
   (org-indent-mode t)
   (global-company-mode t)
@@ -366,6 +367,7 @@ layers configuration. You are free to put any user code."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(org-export-with-sub-superscripts nil)
  '(package-selected-packages
    (quote
     (volatile-highlights vi-tilde-fringe spaceline powerline smeargle rainbow-delimiters orgit org-projectile org-present org-download org-bullets magit-gitflow magit-gh-pulls lorem-ipsum livid-mode skewer-mode simple-httpd highlight-indentation helm-make helm helm-core google-translate git-gutter-fringe git-gutter gh-md flx-ido fancy-battery eyebrowse evil-unimpaired evil-mc evil-lisp-state smartparens evil-indent-plus evil-exchange evil-escape evil-ediff evil-args disaster counsel-projectile clean-aindent-mode clang-format auto-dictionary ac-ispell auto-complete zenburn-theme yapfify yaml-mode xterm-color ws-butler winum which-key wgrep web-mode web-beautify uuidgen use-package unfill toc-org tagedit swift-mode stickyfunc-enhance srefactor sql-indent solarized-theme smex slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs request rainbow-mode rainbow-identifiers pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el pbcopy paradox ox-gfm osx-trash osx-dictionary org-pomodoro open-junk-file ob-elixir neotree mwim multi-term move-text monokai-theme mmm-mode markdown-toc macrostep lua-mode live-py-mode linum-relative link-hint less-css-mode launchctl json-mode js2-refactor js-doc ivy-hydra info+ indent-guide ibuffer-projectile hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers hide-comnt help-fns+ golden-ratio go-guru go-eldoc gnuplot gitignore-mode github-search github-clone github-browse-file gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link git-gutter-fringe+ gist ggtags fuzzy flyspell-correct-ivy flycheck-pos-tip flycheck-mix flycheck-credo flx fill-column-indicator expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-matchit evil-magit evil-iedit-state evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help erlang emmet-mode elisp-slime-nav dumb-jump diff-hl cython-mode counsel company-web company-tern company-statistics company-go company-c-headers company-auctex company-anaconda column-enforce-mode color-identifiers-mode coffee-mode cmake-mode bind-map auto-yasnippet auto-highlight-symbol auto-compile alchemist aggressive-indent adaptive-wrap ace-window ace-link))))
